@@ -6,10 +6,13 @@ menu::menu(QWidget *parent)
     , ui(new Ui::menu)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Main Menu");
+    QFont font("Arial", 16, QFont::Bold);
+    this->setFont(font);
     ui->MainLabel->setAlignment(Qt::AlignCenter);
-    ui->MainLabel->setStyleSheet("font-size: 24px;");
+    ui->MainLabel->setStyleSheet("font-size: 30px;");
     this->setStyleSheet("background-color: lightblue;");
-
+    ui->MainLabel->setFont(font);
 }
 
 menu::~menu()
@@ -19,7 +22,9 @@ menu::~menu()
 
 void menu::on_pushButton_SignUp_clicked()
 {
-
+    this->close();
+    signup = new SignUp(this);
+    signup->show();
 }
 
 void menu::on_pushButton_LogIn_clicked()

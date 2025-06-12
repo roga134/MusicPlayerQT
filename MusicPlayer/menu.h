@@ -2,10 +2,13 @@
 #define MENU_H
 
 #include <QMainWindow>
+#include "signup.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class menu; }
 QT_END_NAMESPACE
+
+class SignUp;
 
 class menu : public QMainWindow
 {
@@ -24,5 +27,6 @@ private slots:
 
 private:
     Ui::menu *ui;
+    SignUp *signup;
 };
 #endif // MENU_H

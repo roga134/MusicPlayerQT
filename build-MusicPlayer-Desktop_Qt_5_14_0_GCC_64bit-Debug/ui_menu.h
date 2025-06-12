@@ -14,7 +14,6 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
@@ -34,7 +33,6 @@ public:
     QPushButton *pushButton_LogIn;
     QPushButton *pushButton_ForPass;
     QPushButton *pushButton_Exit;
-    QMenuBar *menubar;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *menu)
@@ -126,10 +124,6 @@ public:
         verticalLayout_2->addLayout(verticalLayout);
 
         menu->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(menu);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 24));
-        menu->setMenuBar(menubar);
         statusbar = new QStatusBar(menu);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         menu->setStatusBar(statusbar);
