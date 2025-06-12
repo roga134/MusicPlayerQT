@@ -11,8 +11,12 @@ menu::menu(QWidget *parent)
     this->setFont(font);
     ui->MainLabel->setAlignment(Qt::AlignCenter);
     ui->MainLabel->setStyleSheet("font-size: 30px;");
-    this->setStyleSheet("background-color: lightblue;");
+    this->setStyleSheet("background-color: lightpink;");
     ui->MainLabel->setFont(font);
+    ui->pushButton_Exit->setFont(font);
+    ui->pushButton_LogIn->setFont(font);
+    ui->pushButton_SignUp->setFont(font);
+    ui->pushButton_ForPass->setFont(font);
 }
 
 menu::~menu()
@@ -29,10 +33,14 @@ void menu::on_pushButton_SignUp_clicked()
 
 void menu::on_pushButton_LogIn_clicked()
 {
-
+    this->close();
+    login = new LogIn(this);
+    login->show();
 }
 
 void menu::on_pushButton_ForPass_clicked()
 {
-
+    this->close();
+    forgetpass = new ForgetPass(this);
+    forgetpass->show();
 }

@@ -16,16 +16,27 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    encryption.cpp \
+    forgetpass.cpp \
+    login.cpp \
     main.cpp \
     menu.cpp \
+    recoverypass.cpp \
     signup.cpp
 
 HEADERS += \
+    encryption.h \
+    forgetpass.h \
+    login.h \
     menu.h \
+    recoverypass.h \
     signup.h
 
 FORMS += \
+    forgetpass.ui \
+    login.ui \
     menu.ui \
+    recoverypass.ui \
     signup.ui
 
 # Default rules for deployment.

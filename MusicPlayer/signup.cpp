@@ -1,5 +1,6 @@
 #include "signup.h"
 #include "ui_signup.h"
+#include "encryption.h"
 #include <QFont>
 #include <QMessageBox>
 #include <QFile>
@@ -11,7 +12,7 @@ SignUp::SignUp(QWidget *parent) :
     ui(new Ui::SignUp)
 {
     ui->setupUi(this);
-    this->setStyleSheet("background-color: cyan;");
+    this->setStyleSheet("background-color: lightcyan;");
     QFont font("Arial", 12, QFont::Bold);
     this->setWindowTitle("Sign Up Page");
     this->setFont(font);
@@ -29,16 +30,6 @@ SignUp::SignUp(QWidget *parent) :
 SignUp::~SignUp()
 {
     delete ui;
-}
-
-QString simpleXOREncryptDecrypt(const QString &input, char key)
-{
-    QByteArray bytes = input.toUtf8();
-    for(int i = 0; i < bytes.size(); i++)
-    {
-        bytes[i] = bytes[i] ^ key;
-    }
-    return QString::fromUtf8(bytes);
 }
 
 void SignUp::WriteOnFile()
@@ -90,8 +81,8 @@ void SignUp::on_pushButton_login_clicked()
     else
     {
         this->close();
-        mymenu = new menu(this);
-        mymenu->show();
+        login = new LogIn(this);
+        login->show();
         WriteOnFile();
     }
 }

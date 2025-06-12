@@ -3,12 +3,14 @@
 
 #include <QMainWindow>
 #include "menu.h"
+#include "login.h"
 
 namespace Ui {
 class SignUp;
 }
 
 class menu;
+class LogIn;
 
 class SignUp : public QMainWindow
 {
@@ -27,6 +29,7 @@ private slots:
 private:
     Ui::SignUp *ui;
     menu *mymenu;
+    LogIn *login;
 };
 
 #endif // SIGNUP_H

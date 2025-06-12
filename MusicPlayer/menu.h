@@ -3,12 +3,16 @@
 
 #include <QMainWindow>
 #include "signup.h"
+#include "login.h"
+#include "forgetpass.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class menu; }
 QT_END_NAMESPACE
 
 class SignUp;
+class LogIn;
+class ForgetPass;
 
 class menu : public QMainWindow
 {
@@ -28,5 +32,7 @@ private slots:
 private:
     Ui::menu *ui;
     SignUp *signup;
+    LogIn *login;
+    ForgetPass * forgetpass;
 };
 #endif // MENU_H
