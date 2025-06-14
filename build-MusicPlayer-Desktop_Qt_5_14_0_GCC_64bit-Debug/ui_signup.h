@@ -104,6 +104,7 @@ public:
         lineEdit_ConfPass->setObjectName(QString::fromUtf8("lineEdit_ConfPass"));
         sizePolicy1.setHeightForWidth(lineEdit_ConfPass->sizePolicy().hasHeightForWidth());
         lineEdit_ConfPass->setSizePolicy(sizePolicy1);
+        lineEdit_ConfPass->setEchoMode(QLineEdit::Password);
 
         gridLayout->addWidget(lineEdit_ConfPass, 5, 1, 1, 1);
 
@@ -118,6 +119,7 @@ public:
         lineEdit_Pass->setObjectName(QString::fromUtf8("lineEdit_Pass"));
         sizePolicy1.setHeightForWidth(lineEdit_Pass->sizePolicy().hasHeightForWidth());
         lineEdit_Pass->setSizePolicy(sizePolicy1);
+        lineEdit_Pass->setEchoMode(QLineEdit::Password);
 
         gridLayout->addWidget(lineEdit_Pass, 4, 1, 1, 1);
 

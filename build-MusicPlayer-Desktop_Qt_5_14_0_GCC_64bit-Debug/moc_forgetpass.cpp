@@ -35,11 +35,11 @@ static const qt_meta_stringdata_ForgetPass_t qt_meta_stringdata_ForgetPass = {
 QT_MOC_LITERAL(0, 0, 10), // "ForgetPass"
 QT_MOC_LITERAL(1, 11, 26), // "on_pushButton_back_clicked"
 QT_MOC_LITERAL(2, 38, 0), // ""
-QT_MOC_LITERAL(3, 39, 26) // "on_pushButton_next_clicked"
+QT_MOC_LITERAL(3, 39, 26) // "on_pushButton_Done_clicked"
 
     },
     "ForgetPass\0on_pushButton_back_clicked\0"
-    "\0on_pushButton_next_clicked"
+    "\0on_pushButton_Done_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -74,7 +74,7 @@ void ForgetPass::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->on_pushButton_back_clicked(); break;
-        case 1: _t->on_pushButton_next_clicked(); break;
+        case 1: _t->on_pushButton_Done_clicked(); break;
         default: ;
         }
     }
