@@ -57,23 +57,19 @@ SOURCES       = ../MusicPlayer/encryption.cpp \
 		../MusicPlayer/login.cpp \
 		../MusicPlayer/main.cpp \
 		../MusicPlayer/menu.cpp \
-		../MusicPlayer/recoverypass.cpp \
 		../MusicPlayer/signup.cpp moc_forgetpass.cpp \
 		moc_login.cpp \
 		moc_menu.cpp \
-		moc_recoverypass.cpp \
 		moc_signup.cpp
 OBJECTS       = encryption.o \
 		forgetpass.o \
 		login.o \
 		main.o \
 		menu.o \
-		recoverypass.o \
 		signup.o \
 		moc_forgetpass.o \
 		moc_login.o \
 		moc_menu.o \
-		moc_recoverypass.o \
 		moc_signup.o
 DIST          = /opt/Qt5.14.0/5.14.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/opt/Qt5.14.0/5.14.0/gcc_64/mkspecs/common/unix.conf \
@@ -290,13 +286,11 @@ DIST          = /opt/Qt5.14.0/5.14.0/gcc_64/mkspecs/features/spec_pre.prf \
 		../MusicPlayer/forgetpass.h \
 		../MusicPlayer/login.h \
 		../MusicPlayer/menu.h \
-		../MusicPlayer/recoverypass.h \
 		../MusicPlayer/signup.h ../MusicPlayer/encryption.cpp \
 		../MusicPlayer/forgetpass.cpp \
 		../MusicPlayer/login.cpp \
 		../MusicPlayer/main.cpp \
 		../MusicPlayer/menu.cpp \
-		../MusicPlayer/recoverypass.cpp \
 		../MusicPlayer/signup.cpp
 QMAKE_TARGET  = MusicPlayer
 DESTDIR       = 
@@ -306,7 +300,7 @@ TARGET        = MusicPlayer
 first: all
 ####### Build rules
 
-MusicPlayer: ui_forgetpass.h ui_login.h ui_menu.h ui_recoverypass.h ui_signup.h $(OBJECTS)  
+MusicPlayer: ui_forgetpass.h ui_login.h ui_menu.h ui_signup.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../MusicPlayer/MusicPlayer.pro /opt/Qt5.14.0/5.14.0/gcc_64/mkspecs/linux-g++/qmake.conf /opt/Qt5.14.0/5.14.0/gcc_64/mkspecs/features/spec_pre.prf \
@@ -749,9 +743,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /opt/Qt5.14.0/5.14.0/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../MusicPlayer/encryption.h ../MusicPlayer/forgetpass.h ../MusicPlayer/login.h ../MusicPlayer/menu.h ../MusicPlayer/recoverypass.h ../MusicPlayer/signup.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../MusicPlayer/encryption.cpp ../MusicPlayer/forgetpass.cpp ../MusicPlayer/login.cpp ../MusicPlayer/main.cpp ../MusicPlayer/menu.cpp ../MusicPlayer/recoverypass.cpp ../MusicPlayer/signup.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../MusicPlayer/forgetpass.ui ../MusicPlayer/login.ui ../MusicPlayer/menu.ui ../MusicPlayer/recoverypass.ui ../MusicPlayer/signup.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../MusicPlayer/encryption.h ../MusicPlayer/forgetpass.h ../MusicPlayer/login.h ../MusicPlayer/menu.h ../MusicPlayer/signup.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../MusicPlayer/encryption.cpp ../MusicPlayer/forgetpass.cpp ../MusicPlayer/login.cpp ../MusicPlayer/main.cpp ../MusicPlayer/menu.cpp ../MusicPlayer/signup.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../MusicPlayer/forgetpass.ui ../MusicPlayer/login.ui ../MusicPlayer/menu.ui ../MusicPlayer/signup.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -783,9 +777,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /opt/Qt5.14.0/5.14.0/gcc_64/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++11 -Wall -Wextra -dM -E -o moc_predefs.h /opt/Qt5.14.0/5.14.0/gcc_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_forgetpass.cpp moc_login.cpp moc_menu.cpp moc_recoverypass.cpp moc_signup.cpp
+compiler_moc_header_make_all: moc_forgetpass.cpp moc_login.cpp moc_menu.cpp moc_signup.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_forgetpass.cpp moc_login.cpp moc_menu.cpp moc_recoverypass.cpp moc_signup.cpp
+	-$(DEL_FILE) moc_forgetpass.cpp moc_login.cpp moc_menu.cpp moc_signup.cpp
 moc_forgetpass.cpp: ../MusicPlayer/forgetpass.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QMainWindow \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qmainwindow.h \
@@ -898,7 +892,6 @@ moc_forgetpass.cpp: ../MusicPlayer/forgetpass.h \
 		../MusicPlayer/signup.h \
 		../MusicPlayer/login.h \
 		../MusicPlayer/forgetpass.h \
-		../MusicPlayer/recoverypass.h \
 		moc_predefs.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/bin/moc
 	/opt/Qt5.14.0/5.14.0/gcc_64/bin/moc $(DEFINES) --include /home/roga-134/Desktop/music_project/build-MusicPlayer-Desktop_Qt_5_14_0_GCC_64bit-Debug/moc_predefs.h -I/opt/Qt5.14.0/5.14.0/gcc_64/mkspecs/linux-g++ -I/home/roga-134/Desktop/music_project/MusicPlayer -I/opt/Qt5.14.0/5.14.0/gcc_64/include -I/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets -I/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui -I/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore -I. -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../MusicPlayer/forgetpass.h -o moc_forgetpass.cpp
@@ -1015,7 +1008,6 @@ moc_login.cpp: ../MusicPlayer/login.h \
 		../MusicPlayer/signup.h \
 		../MusicPlayer/login.h \
 		../MusicPlayer/forgetpass.h \
-		../MusicPlayer/recoverypass.h \
 		moc_predefs.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/bin/moc
 	/opt/Qt5.14.0/5.14.0/gcc_64/bin/moc $(DEFINES) --include /home/roga-134/Desktop/music_project/build-MusicPlayer-Desktop_Qt_5_14_0_GCC_64bit-Debug/moc_predefs.h -I/opt/Qt5.14.0/5.14.0/gcc_64/mkspecs/linux-g++ -I/home/roga-134/Desktop/music_project/MusicPlayer -I/opt/Qt5.14.0/5.14.0/gcc_64/include -I/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets -I/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui -I/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore -I. -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../MusicPlayer/login.h -o moc_login.cpp
@@ -1132,122 +1124,9 @@ moc_menu.cpp: ../MusicPlayer/menu.h \
 		../MusicPlayer/menu.h \
 		../MusicPlayer/login.h \
 		../MusicPlayer/forgetpass.h \
-		../MusicPlayer/recoverypass.h \
 		moc_predefs.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/bin/moc
 	/opt/Qt5.14.0/5.14.0/gcc_64/bin/moc $(DEFINES) --include /home/roga-134/Desktop/music_project/build-MusicPlayer-Desktop_Qt_5_14_0_GCC_64bit-Debug/moc_predefs.h -I/opt/Qt5.14.0/5.14.0/gcc_64/mkspecs/linux-g++ -I/home/roga-134/Desktop/music_project/MusicPlayer -I/opt/Qt5.14.0/5.14.0/gcc_64/include -I/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets -I/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui -I/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore -I. -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../MusicPlayer/menu.h -o moc_menu.cpp
-
-moc_recoverypass.cpp: ../MusicPlayer/recoverypass.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QMainWindow \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qmainwindow.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qtguiglobal.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qglobal.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qconfig-bootstrapped.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qconfig.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qtcore-config.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qsystemdetection.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qprocessordetection.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qcompilerdetection.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qtypeinfo.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qsysinfo.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qlogging.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qflags.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qatomic.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qbasicatomic.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qatomic_bootstrap.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qgenericatomic.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qatomic_cxx11.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qatomic_msvc.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qglobalstatic.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qmutex.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qnumeric.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qversiontagging.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qtgui-config.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qtwidgets-config.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qwidget.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qwindowdefs.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qobjectdefs.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qnamespace.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qwindowdefs_win.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qobject.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qstring.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qchar.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qbytearray.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qrefcount.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qarraydata.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qstringliteral.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qstringalgorithms.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qstringview.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qstringbuilder.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qlist.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qalgorithms.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qiterator.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qhashfunctions.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qpair.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qvector.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qcontainertools_impl.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qpoint.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qbytearraylist.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qstringlist.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qregexp.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qstringmatcher.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qcoreevent.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qscopedpointer.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qmetatype.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qvarlengtharray.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qcontainerfwd.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qobject_impl.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qmargins.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpaintdevice.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qrect.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qsize.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpalette.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qcolor.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qrgb.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qrgba64.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qbrush.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qmatrix.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpolygon.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qregion.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qdatastream.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qiodevice.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qline.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qtransform.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpainterpath.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qimage.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpixelformat.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpixmap.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qsharedpointer.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qshareddata.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qhash.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qfont.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qfontmetrics.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qfontinfo.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qsizepolicy.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qcursor.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qkeysequence.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qevent.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qvariant.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qmap.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qdebug.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qtextstream.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qlocale.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qset.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qcontiguouscache.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qurlquery.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qfile.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qfiledevice.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qvector2d.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qtouchdevice.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qtabwidget.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qicon.h \
-		moc_predefs.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/bin/moc
-	/opt/Qt5.14.0/5.14.0/gcc_64/bin/moc $(DEFINES) --include /home/roga-134/Desktop/music_project/build-MusicPlayer-Desktop_Qt_5_14_0_GCC_64bit-Debug/moc_predefs.h -I/opt/Qt5.14.0/5.14.0/gcc_64/mkspecs/linux-g++ -I/home/roga-134/Desktop/music_project/MusicPlayer -I/opt/Qt5.14.0/5.14.0/gcc_64/include -I/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets -I/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui -I/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore -I. -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../MusicPlayer/recoverypass.h -o moc_recoverypass.cpp
 
 moc_signup.cpp: ../MusicPlayer/signup.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QMainWindow \
@@ -1361,7 +1240,6 @@ moc_signup.cpp: ../MusicPlayer/signup.h \
 		../MusicPlayer/signup.h \
 		../MusicPlayer/login.h \
 		../MusicPlayer/forgetpass.h \
-		../MusicPlayer/recoverypass.h \
 		moc_predefs.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/bin/moc
 	/opt/Qt5.14.0/5.14.0/gcc_64/bin/moc $(DEFINES) --include /home/roga-134/Desktop/music_project/build-MusicPlayer-Desktop_Qt_5_14_0_GCC_64bit-Debug/moc_predefs.h -I/opt/Qt5.14.0/5.14.0/gcc_64/mkspecs/linux-g++ -I/home/roga-134/Desktop/music_project/MusicPlayer -I/opt/Qt5.14.0/5.14.0/gcc_64/include -I/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets -I/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui -I/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore -I. -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../MusicPlayer/signup.h -o moc_signup.cpp
@@ -1370,9 +1248,9 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_forgetpass.h ui_login.h ui_menu.h ui_recoverypass.h ui_signup.h
+compiler_uic_make_all: ui_forgetpass.h ui_login.h ui_menu.h ui_signup.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_forgetpass.h ui_login.h ui_menu.h ui_recoverypass.h ui_signup.h
+	-$(DEL_FILE) ui_forgetpass.h ui_login.h ui_menu.h ui_signup.h
 ui_forgetpass.h: ../MusicPlayer/forgetpass.ui \
 		/opt/Qt5.14.0/5.14.0/gcc_64/bin/uic
 	/opt/Qt5.14.0/5.14.0/gcc_64/bin/uic ../MusicPlayer/forgetpass.ui -o ui_forgetpass.h
@@ -1384,10 +1262,6 @@ ui_login.h: ../MusicPlayer/login.ui \
 ui_menu.h: ../MusicPlayer/menu.ui \
 		/opt/Qt5.14.0/5.14.0/gcc_64/bin/uic
 	/opt/Qt5.14.0/5.14.0/gcc_64/bin/uic ../MusicPlayer/menu.ui -o ui_menu.h
-
-ui_recoverypass.h: ../MusicPlayer/recoverypass.ui \
-		/opt/Qt5.14.0/5.14.0/gcc_64/bin/uic
-	/opt/Qt5.14.0/5.14.0/gcc_64/bin/uic ../MusicPlayer/recoverypass.ui -o ui_recoverypass.h
 
 ui_signup.h: ../MusicPlayer/signup.ui \
 		/opt/Qt5.14.0/5.14.0/gcc_64/bin/uic
@@ -1550,7 +1424,6 @@ forgetpass.o: ../MusicPlayer/forgetpass.cpp ../MusicPlayer/forgetpass.h \
 		../MusicPlayer/menu.h \
 		../MusicPlayer/signup.h \
 		../MusicPlayer/login.h \
-		../MusicPlayer/recoverypass.h \
 		ui_forgetpass.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/QVariant \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QApplication \
@@ -1705,7 +1578,6 @@ login.o: ../MusicPlayer/login.cpp ../MusicPlayer/login.h \
 		../MusicPlayer/menu.h \
 		../MusicPlayer/signup.h \
 		../MusicPlayer/forgetpass.h \
-		../MusicPlayer/recoverypass.h \
 		ui_login.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/QVariant \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QApplication \
@@ -1860,7 +1732,6 @@ main.o: ../MusicPlayer/main.cpp ../MusicPlayer/menu.h \
 		../MusicPlayer/signup.h \
 		../MusicPlayer/login.h \
 		../MusicPlayer/forgetpass.h \
-		../MusicPlayer/recoverypass.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QApplication \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qapplication.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qcoreapplication.h \
@@ -1981,7 +1852,6 @@ menu.o: ../MusicPlayer/menu.cpp ../MusicPlayer/menu.h \
 		../MusicPlayer/signup.h \
 		../MusicPlayer/login.h \
 		../MusicPlayer/forgetpass.h \
-		../MusicPlayer/recoverypass.h \
 		ui_menu.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/QVariant \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QApplication \
@@ -2007,117 +1877,6 @@ menu.o: ../MusicPlayer/menu.cpp ../MusicPlayer/menu.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QVBoxLayout \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o menu.o ../MusicPlayer/menu.cpp
-
-recoverypass.o: ../MusicPlayer/recoverypass.cpp ../MusicPlayer/recoverypass.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QMainWindow \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qmainwindow.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qtguiglobal.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qglobal.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qconfig-bootstrapped.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qconfig.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qtcore-config.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qsystemdetection.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qprocessordetection.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qcompilerdetection.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qtypeinfo.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qsysinfo.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qlogging.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qflags.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qatomic.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qbasicatomic.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qatomic_bootstrap.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qgenericatomic.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qatomic_cxx11.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qatomic_msvc.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qglobalstatic.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qmutex.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qnumeric.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qversiontagging.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qtgui-config.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qtwidgets-config.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qwidget.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qwindowdefs.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qobjectdefs.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qnamespace.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qwindowdefs_win.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qobject.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qstring.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qchar.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qbytearray.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qrefcount.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qarraydata.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qstringliteral.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qstringalgorithms.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qstringview.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qstringbuilder.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qlist.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qalgorithms.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qiterator.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qhashfunctions.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qpair.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qvector.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qcontainertools_impl.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qpoint.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qbytearraylist.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qstringlist.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qregexp.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qstringmatcher.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qcoreevent.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qscopedpointer.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qmetatype.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qvarlengtharray.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qcontainerfwd.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qobject_impl.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qmargins.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpaintdevice.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qrect.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qsize.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpalette.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qcolor.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qrgb.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qrgba64.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qbrush.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qmatrix.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpolygon.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qregion.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qdatastream.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qiodevice.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qline.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qtransform.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpainterpath.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qimage.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpixelformat.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpixmap.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qsharedpointer.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qshareddata.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qhash.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qfont.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qfontmetrics.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qfontinfo.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qsizepolicy.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qcursor.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qkeysequence.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qevent.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qvariant.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qmap.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qdebug.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qtextstream.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qlocale.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qset.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qcontiguouscache.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qurl.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qurlquery.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qfile.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qfiledevice.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qvector2d.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qtouchdevice.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qtabwidget.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qicon.h \
-		ui_recoverypass.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o recoverypass.o ../MusicPlayer/recoverypass.cpp
 
 signup.o: ../MusicPlayer/signup.cpp ../MusicPlayer/signup.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QMainWindow \
@@ -2230,7 +1989,6 @@ signup.o: ../MusicPlayer/signup.cpp ../MusicPlayer/signup.h \
 		../MusicPlayer/menu.h \
 		../MusicPlayer/login.h \
 		../MusicPlayer/forgetpass.h \
-		../MusicPlayer/recoverypass.h \
 		ui_signup.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/QVariant \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QApplication \
@@ -2282,9 +2040,6 @@ moc_login.o: moc_login.cpp
 
 moc_menu.o: moc_menu.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_menu.o moc_menu.cpp
-
-moc_recoverypass.o: moc_recoverypass.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_recoverypass.o moc_recoverypass.cpp
 
 moc_signup.o: moc_signup.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_signup.o moc_signup.cpp

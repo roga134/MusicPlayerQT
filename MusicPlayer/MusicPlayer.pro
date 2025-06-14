@@ -21,7 +21,6 @@ SOURCES += \
     login.cpp \
     main.cpp \
     menu.cpp \
-    recoverypass.cpp \
     signup.cpp
 
 HEADERS += \
@@ -29,14 +28,12 @@ HEADERS += \
     forgetpass.h \
     login.h \
     menu.h \
-    recoverypass.h \
     signup.h
 
 FORMS += \
     forgetpass.ui \
     login.ui \
     menu.ui \
-    recoverypass.ui \
     signup.ui
 
 # Default rules for deployment.
