@@ -12,19 +12,8 @@ SignUp::SignUp(QWidget *parent) :
     ui(new Ui::SignUp)
 {
     ui->setupUi(this);
-    this->setStyleSheet("background-color: lightcyan;");
-    QFont font("Arial", 12, QFont::Bold);
     this->setWindowTitle("Sign Up Page");
-    this->setFont(font);
-    ui->pushButton_back->setFont(font);
-    ui->pushButton_login->setFont(font);
-    ui->label_FirstName->setFont(font);
-    ui->label_LastName->setFont(font);
-    ui->label_UserName->setFont(font);
-    ui->label_Pass->setFont(font);
-    ui->label_Email->setFont(font);
-    ui->label_ConfPass->setFont(font);
-    ui->label_SecureCode->setFont(font);
+
 }
 
 SignUp::~SignUp()
