@@ -12,16 +12,8 @@ ForgetPass::ForgetPass(QWidget *parent) :
     ui(new Ui::ForgetPass)
 {
     ui->setupUi(this);
-    this->setStyleSheet("background-color: lightcyan;");
     this->setWindowTitle("Recovery Page");
-    QFont font("Arial", 16, QFont::Bold);
-    this->setFont(font);
-    ui->label_secure->setFont(font);
-    ui->label_username->setFont(font);
-    ui->pushButton_back->setFont(font);
-    ui->pushButton_Done->setFont(font);
-    ui->label_confpass->setFont(font);
-    ui->label_pass->setFont(font);
+
 }
 
 ForgetPass::~ForgetPass()

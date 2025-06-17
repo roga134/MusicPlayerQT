@@ -12,14 +12,8 @@ LogIn::LogIn(QWidget *parent) :
     ui(new Ui::LogIn)
 {
     ui->setupUi(this);
-    this->setStyleSheet("background-color: lightcyan;");
     this->setWindowTitle("Log In Page");
-    QFont font("Arial", 16, QFont::Bold);
-    this->setFont(font);
-    ui->label_username->setFont(font);
-    ui->label_pass->setFont(font);
-    ui->pushButton_back->setFont(font);
-    ui->pushButton_enter->setFont(font);
+
 }
 
 LogIn::~LogIn()
