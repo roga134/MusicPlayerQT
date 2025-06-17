@@ -2,6 +2,7 @@
 #define SIGNUP_H
 
 #include <QMainWindow>
+#include <QLabel>
 #include "menu.h"
 #include "login.h"
 
@@ -26,8 +27,12 @@ private slots:
 
     void on_pushButton_login_clicked();
 
+protected:
+    void resizeEvent(QResizeEvent *event) override;
+
 private:
     Ui::SignUp *ui;
+    QLabel *background = nullptr;
     menu *mymenu;
     LogIn *login;
 };

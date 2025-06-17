@@ -6,22 +6,17 @@
 #include <QFile>
 #include <QTextStream>
 #include <QCryptographicHash>
+#include <QPixmap>
 
 ForgetPass::ForgetPass(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::ForgetPass)
 {
     ui->setupUi(this);
-    this->setStyleSheet("background-color: lightcyan;");
     this->setWindowTitle("Recovery Page");
-    QFont font("Arial", 16, QFont::Bold);
-    this->setFont(font);
-    ui->label_secure->setFont(font);
-    ui->label_username->setFont(font);
-    ui->pushButton_back->setFont(font);
-    ui->pushButton_Done->setFont(font);
-    ui->label_confpass->setFont(font);
-    ui->label_pass->setFont(font);
+
+    background = new QLabel(this);
+    background->lower();
 }
 
 ForgetPass::~ForgetPass()
@@ -144,4 +139,17 @@ void ForgetPass::CheckPass()
     this->close();
     mymenu = new menu(this);
     mymenu->show();
+}
+
+void ForgetPass::resizeEvent(QResizeEvent *event)
+{
+    QMainWindow::resizeEvent(event);
+
+    if (background)
+    {
+        background->setGeometry(0, 0, this->width(), this->height());
+
+        QPixmap pixmap(":/new/image1/image.jpg");
+        background->setPixmap(pixmap.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    }
 }

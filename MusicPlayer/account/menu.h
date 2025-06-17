@@ -2,13 +2,14 @@
 #define MENU_H
 
 #include <QMainWindow>
+#include <QLabel>
 #include "signup.h"
 #include "login.h"
 #include "forgetpass.h"
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class menu; }
-QT_END_NAMESPACE
+namespace Ui {
+class menu;
+}
 
 class SignUp;
 class LogIn;
@@ -19,20 +20,27 @@ class menu : public QMainWindow
     Q_OBJECT
 
 public:
-    menu(QWidget *parent = nullptr);
+    explicit menu(QWidget *parent = nullptr);
     ~menu();
 
+protected:
+    void resizeEvent(QResizeEvent *event) override;
+
 private slots:
-    void on_pushButton_SignUp_clicked();
+    void on_pushButton_exit_clicked();
 
-    void on_pushButton_LogIn_clicked();
+    void on_pushButton_forPass_clicked();
 
-    void on_pushButton_ForPass_clicked();
+    void on_pushButton_logIn_clicked();
+
+    void on_pushButton_signUp_clicked();
 
 private:
     Ui::menu *ui;
-    SignUp *signup;
-    LogIn *login;
-    ForgetPass * forgetpass;
+    QLabel *background = nullptr;
+    SignUp *signup = nullptr;
+    LogIn *login = nullptr;
+    ForgetPass *forgetpass = nullptr;
 };
+
 #endif // MENU_H

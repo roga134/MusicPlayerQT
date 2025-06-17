@@ -6,20 +6,17 @@
 #include <QFile>
 #include <QTextStream>
 #include <QCryptographicHash>
+#include <QPixmap>
 
 LogIn::LogIn(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::LogIn)
 {
     ui->setupUi(this);
-    this->setStyleSheet("background-color: lightcyan;");
     this->setWindowTitle("Log In Page");
-    QFont font("Arial", 16, QFont::Bold);
-    this->setFont(font);
-    ui->label_username->setFont(font);
-    ui->label_pass->setFont(font);
-    ui->pushButton_back->setFont(font);
-    ui->pushButton_enter->setFont(font);
+
+    background = new QLabel(this);
+    background->lower();
 }
 
 LogIn::~LogIn()
@@ -71,4 +68,17 @@ void LogIn::on_pushButton_enter_clicked()
 
     file.close();
     QMessageBox::warning(this, "Login Failed", "Incorrect username or password.");
+}
+
+void LogIn::resizeEvent(QResizeEvent *event)
+{
+    QMainWindow::resizeEvent(event);
+
+    if (background)
+    {
+        background->setGeometry(0, 0, this->width(), this->height());
+
+        QPixmap pixmap(":/new/image1/image.jpg");
+        background->setPixmap(pixmap.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    }
 }

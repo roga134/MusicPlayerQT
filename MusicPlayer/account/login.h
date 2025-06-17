@@ -2,6 +2,7 @@
 #define LOGIN_H
 
 #include <QMainWindow>
+#include <QLabel>
 #include "menu.h"
 
 namespace Ui {
@@ -9,7 +10,6 @@ class LogIn;
 }
 
 class menu;
-class MainMusicPlayerPage;
 
 class LogIn : public QMainWindow
 {
@@ -24,8 +24,12 @@ private slots:
 
     void on_pushButton_enter_clicked();
 
+protected:
+    void resizeEvent(QResizeEvent *event) override;
+
 private:
     Ui::LogIn *ui;
+    QLabel *background = nullptr;
     menu *mymenu;
 };
 

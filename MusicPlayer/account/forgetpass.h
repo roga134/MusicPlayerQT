@@ -2,6 +2,7 @@
 #define FORGETPASS_H
 
 #include <QMainWindow>
+#include <QLabel>
 #include "menu.h"
 
 namespace Ui {
@@ -24,8 +25,12 @@ private slots:
 
     void on_pushButton_Done_clicked();
 
+protected:
+    void resizeEvent(QResizeEvent *event) override;
+
 private:
     Ui::ForgetPass *ui;
+    QLabel *background = nullptr;
     menu *mymenu;
 };
 

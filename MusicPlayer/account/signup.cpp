@@ -6,25 +6,16 @@
 #include <QFile>
 #include <QTextStream>
 #include <QCryptographicHash>
+#include <QPixmap>
 
 SignUp::SignUp(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::SignUp)
 {
     ui->setupUi(this);
-    this->setStyleSheet("background-color: lightcyan;");
-    QFont font("Arial", 12, QFont::Bold);
     this->setWindowTitle("Sign Up Page");
-    this->setFont(font);
-    ui->pushButton_back->setFont(font);
-    ui->pushButton_login->setFont(font);
-    ui->label_FirstName->setFont(font);
-    ui->label_LastName->setFont(font);
-    ui->label_UserName->setFont(font);
-    ui->label_Pass->setFont(font);
-    ui->label_Email->setFont(font);
-    ui->label_ConfPass->setFont(font);
-    ui->label_SecureCode->setFont(font);
+    background = new QLabel(this);
+    background->lower();
 }
 
 SignUp::~SignUp()
@@ -84,5 +75,18 @@ void SignUp::on_pushButton_login_clicked()
         login = new LogIn(this);
         login->show();
         WriteOnFile();
+    }
+}
+
+void SignUp::resizeEvent(QResizeEvent *event)
+{
+    QMainWindow::resizeEvent(event);
+
+    if (background)
+    {
+        background->setGeometry(0, 0, this->width(), this->height());
+
+        QPixmap pixmap(":/new/image1/image.jpg");
+        background->setPixmap(pixmap.scaled(this->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
     }
 }
