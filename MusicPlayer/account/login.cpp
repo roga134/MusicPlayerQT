@@ -16,7 +16,12 @@ LogIn::LogIn(QWidget *parent) :
     this->setWindowTitle("Log In Page");
 
     background = new QLabel(this);
-    background->lower();
+    background->lower();    
+    QFont font("Arial" , 12 , QFont::Bold);
+    this->setFont(font);
+    ui->pushButton_back->setFont(font);
+    ui->pushButton_enter->setFont(font);
+
 }
 
 LogIn::~LogIn()

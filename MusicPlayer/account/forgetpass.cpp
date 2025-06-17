@@ -17,6 +17,10 @@ ForgetPass::ForgetPass(QWidget *parent) :
 
     background = new QLabel(this);
     background->lower();
+    QFont font("Arial" , 12 , QFont::Bold);
+    this->setFont(font);
+    ui->pushButton_Done->setFont(font);
+    ui->pushButton_back->setFont(font);
 }
 
 ForgetPass::~ForgetPass()

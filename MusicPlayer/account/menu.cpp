@@ -11,6 +11,13 @@ menu::menu(QWidget *parent) :
 
     background = new QLabel(this);
     background->lower();
+    QFont font("Arial" , 12 , QFont::Bold);
+    this->setFont(font);
+    ui->pushButton_exit->setFont(font);
+    ui->pushButton_logIn->setFont(font);
+    ui->pushButton_signUp->setFont(font);
+    ui->pushButton_forPass->setFont(font);
+    ui->label->setAlignment(Qt::AlignCenter);
 }
 
 menu::~menu()

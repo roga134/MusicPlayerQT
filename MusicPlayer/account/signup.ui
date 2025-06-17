@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>870</width>
-    <height>372</height>
+    <height>341</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -67,10 +67,18 @@
        </widget>
       </item>
       <item row="4" column="2">
-       <widget class="QLineEdit" name="lineEdit_Pass"/>
+       <widget class="QLineEdit" name="lineEdit_Pass">
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
       </item>
       <item row="5" column="2">
-       <widget class="QLineEdit" name="lineEdit_ConfPass"/>
+       <widget class="QLineEdit" name="lineEdit_ConfPass">
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
       </item>
       <item row="3" column="2">
        <widget class="QLineEdit" name="lineEdit_Email"/>
@@ -99,22 +107,28 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QPushButton" name="pushButton_login">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(100, 203, 203);</string>
-        </property>
-        <property name="text">
-         <string>Login</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QPushButton" name="pushButton_back">
+        <property name="cursor">
+         <cursorShape>OpenHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(100, 203, 203);</string>
         </property>
         <property name="text">
          <string>Back</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_login">
+        <property name="cursor">
+         <cursorShape>OpenHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(100, 203, 203);</string>
+        </property>
+        <property name="text">
+         <string>Login</string>
         </property>
        </widget>
       </item>

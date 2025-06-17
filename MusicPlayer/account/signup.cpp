@@ -16,6 +16,10 @@ SignUp::SignUp(QWidget *parent) :
     this->setWindowTitle("Sign Up Page");
     background = new QLabel(this);
     background->lower();
+
+    QFont font("Arial" , 12 , QFont::Bold);
+    ui->pushButton_back->setFont(font);
+    ui->pushButton_login->setFont(font);
 }
 
 SignUp::~SignUp()
