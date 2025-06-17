@@ -18,7 +18,7 @@
     <item>
      <widget class="QLabel" name="label">
       <property name="text">
-       <string>TextLabel</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:22pt; color:#ffffff;&quot;&gt;Welcome To The MusicPlayer&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </item>
@@ -26,6 +26,9 @@
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="QPushButton" name="pushButton_logIn">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(100, 203, 203);</string>
+        </property>
         <property name="text">
          <string>Login</string>
         </property>
@@ -33,6 +36,9 @@
       </item>
       <item>
        <widget class="QPushButton" name="pushButton_signUp">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(100, 203, 203);</string>
+        </property>
         <property name="text">
          <string>SignUp</string>
         </property>
@@ -44,6 +50,9 @@
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <widget class="QPushButton" name="pushButton_forPass">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(100, 203, 203);</string>
+        </property>
         <property name="text">
          <string>ForgetPassword</string>
         </property>
@@ -51,6 +60,9 @@
       </item>
       <item>
        <widget class="QPushButton" name="pushButton_exit">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(100, 203, 203);</string>
+        </property>
         <property name="text">
          <string>Exit</string>
         </property>
