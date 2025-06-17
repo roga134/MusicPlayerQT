@@ -9,6 +9,7 @@ class LogIn;
 }
 
 class menu;
+class MainMusicPlayerPage;
 
 class LogIn : public QMainWindow
 {
