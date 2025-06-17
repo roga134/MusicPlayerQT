@@ -1,14 +1,3 @@
-
-The Jukebox - Required Qt Classes
-
-1. Account System
-- QWidget / QDialog
-- QLineEdit
-- QPushButton
-- QLabel
-- QStackedWidget or QTabWidget
-- QFile + QTextStream (or QDataStream)
-
 2. Music Player
 - QMediaPlayer
 - QMediaPlaylist
@@ -16,8 +5,6 @@ The Jukebox - Required Qt Classes
 - QSlider
 - QListView or QListWidget
 - QStringListModel or QStandardItemModel
-- QPushButton
-- QLabel
 - QGraphicsView + QGraphicsScene (or QOpenGLWidget)
 
 3. Online “Jukebox” Synchronization
